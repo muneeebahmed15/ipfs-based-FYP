@@ -5,22 +5,22 @@ export const sidenavs = [
     {
         name:"Dashboard",
         icon : <AiFillDashboard/>,
-        link : "/dashboard",
+        link : "/admin",
     },
     {
-        name:"Products",
+        name:"Create Patient Credentials",
+        icon : <AiFillDashboard/>,
+        link : "/admin/create-patient-credentials",
+    },
+    {
+        name:"Add Patient Health Data",
         icon : <AiOutlineOrderedList/>,
-        link : "/admin/products",
+        link : "/admin/adding-patient-h-data",
     },
     {
-        name:"Create Product",
+        name:"Create Doctor Credentials",
         icon : <AiFillPoundCircle/>,
-        link : "/admin/create-product",
-    },
-    {
-        name:"Orders",
-        icon : <AiOutlineMenu/>,
-        link : "/admin/orders",
+        link : "/admin/creating-doctor-credentials",
     },
     {
         name:"Logout",

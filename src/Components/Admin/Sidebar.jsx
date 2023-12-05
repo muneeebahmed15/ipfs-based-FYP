@@ -25,7 +25,7 @@ const Clicks = (x) => {
         <div className="py-5">
           <img
             src={logo}
-            alt=""
+            alt="logo"
             width={70}
             height={30}
             className="mx-auto mb-5"
@@ -43,10 +43,8 @@ const Clicks = (x) => {
                 to={x.link}
                 key={x.name}
                 onClick={()=>Clicks(x)}
-                className={`${
-                  x.className
-                } flex justify-start items-center mt-3 gap-3 px-3 cursor-pointer   ${
-                  pathname === x.link ? "text-gray-300 pb-2 border-r-4 border-b-4 border-active-color font-bold" : " text-gray-600"
+                className={`${x.className} flex justify-start items-center mt-3 gap-3 px-3 cursor-pointer   ${
+                  pathname === x.link ? "text-active-color pb-2 border-r-4 border-active-color font-bold" : " text-gray-400 hover:text-[#fcc30e]"
                 }`}
               >
                 {x.icon} <span>{x.name}</span>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import Layout from "../../Components/Admin/Layout";
 
 
 function PatientInfo() {
@@ -48,6 +49,7 @@ const submitHandle = async (e) =>{
 
 
   return (
+    <Layout>
     <main className="py-3">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="max-w-lg mx-auto space-y-3 sm:text-center">
@@ -186,6 +188,7 @@ const submitHandle = async (e) =>{
         </div>
       </div>
     </main>
+    </Layout>
   );
 }
 

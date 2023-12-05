@@ -5,12 +5,12 @@ import Login from './Components/Login/Login'
 import PageNotFound from './Components/404Page/PageNotFound'
 import PatientRecord from './Screens/PatientRecord'
 import PatientLogin from './Components/Admin/PatientLogin'
-import PatientInfo from './Components/Admin/PatientInfo'
 import AboutPage from './Screens/AboutPage'
 import MissionPage from './Screens/MissionPage'
 import ContactPage from './Screens/ContactPage'
 import LoginPage from './Screens/LoginPage'
 import Dashboard from './Screens/Admin/Dashboard'
+import PatientInfo from './Screens/Admin/PatientInfo'
 
 const App = () => {
   return (
@@ -31,6 +31,7 @@ const App = () => {
     {/* admin */}
     <Route path='/patientlogin' element={<PatientLogin/>}/>
     <Route path='/admin' element={<Dashboard/>}/>
+    <Route path='/admin/create-patient-credentials' element={<PatientInfo/>}/>
     
 
     {/* <Route path='/patienthealth' element={<PatientHealth/>}/>
