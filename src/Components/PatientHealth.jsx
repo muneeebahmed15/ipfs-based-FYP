@@ -52,7 +52,7 @@ let x = patientdata.map(x);
     </tbody>
     // })
     ))}
-     {JSON.stringify(x.healthdata)}
+     {/* {JSON.stringify(x.healthdata)} */}
   </table>
 </div>
     </>
