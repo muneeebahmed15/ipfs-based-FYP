@@ -1,4 +1,4 @@
-import { AiFillDashboard, AiFillPoundCircle, AiOutlineMenu, AiOutlineOrderedList } from "react-icons/ai";
+import { AiFillDashboard, AiFillPoundCircle, AiOutlineOrderedList } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 
 export const sidenavs = [
@@ -15,12 +15,12 @@ export const sidenavs = [
     {
         name:"Add Patient Health Data",
         icon : <AiOutlineOrderedList/>,
-        link : "/admin/adding-patient-h-data",
+        link : "/admin/add-patient-h-data",
     },
     {
         name:"Create Doctor Credentials",
         icon : <AiFillPoundCircle/>,
-        link : "/admin/creating-doctor-credentials",
+        link : "/admin/create-doctor-credentials",
     },
     {
         name:"Logout",

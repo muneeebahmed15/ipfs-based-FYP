@@ -48,7 +48,7 @@ const Header = ({open, setOpen}) => {
                 onClick={()=>Clicks(x)}
                 className={`${
                   x.className
-                } flex justify-start items-center mt-3 gap-3 px-3 cursor-pointer   ${
+                } flex justify-start items-center mt-3 gap-3 px-3 cursor-pointer hover:text-black  ${
                   pathname === x.link ? "text-gray-300 border-r-4 font-bold" : ""
                 }`}
               >
@@ -57,11 +57,6 @@ const Header = ({open, setOpen}) => {
             );
           })}
                   </ul>
-              </div>
-              <div className="hidden md:inline-block">
-                <a href="javascript:void(0)" className="py-3 px-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow">
-                    Get Started
-                </a>
               </div>
           </div>
       </nav>

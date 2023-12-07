@@ -19,11 +19,11 @@ const Layout = ({children}) => {
     <div className='h-min-screen flex'>
         <Sidebar open={open} />
 
-        <div className='bg-layout-color text-white w-[100%] md:w-[84%]'>
+        <div className='text-white bg-sky-500 w-[100%] md:w-[84%]'>
             <Header open={open} setOpen={setOpen}/>
             <div className={`${open && 'hidden'}`}>
-                {children} {width}
-            </div>
+                {children}
+                    </div>
         </div>
     </div>
     </>

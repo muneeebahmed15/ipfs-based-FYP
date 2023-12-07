@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { logo } from '../../Assets'
 import { Link } from 'react-router-dom'
 
-export default () => {
+const Navbar = () => {
 
     const [state, setState] = useState(false)
 
@@ -70,3 +70,6 @@ export default () => {
         </nav>
     )
 }
+
+
+export default Navbar;
