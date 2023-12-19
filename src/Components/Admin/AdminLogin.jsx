@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { logo } from "../../Assets";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
+import axios from "axios";
 
 
 
@@ -8,17 +11,49 @@ const initValues = {
   password: "",
 };
 
-const Login = () => {
+const AdminLogin = () => {
+  const [ auth, setAuth] = useContext(AuthContext);
+  const navigate = useNavigate();
   const [formdata, setformdata] = useState(initValues);
 
   const changeHandler = (e) => {
     setformdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
+  //api
+  //res -> setAuth set values email,password -> localStorage
   const submitFunction = async (e) => {
     e.preventDefault();
+    // console.log(formdata)
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/admin/login",formdata);
+      // console.log(response);
+      const {data} = response.data;
+      // const adminAccessToken = data.adminAccessToken;
+      // console.log(adminAccessToken);
+      // const adminID = data.loginAdmin;
+      // console.log(adminID)  
+      // const loginData = 
+      setAuth({user: data.loginAdmin, token: data.adminAccessToken});
+      //  console.log(auth);
+      //  console.log(data);
+       localStorage.setItem("auth", JSON.stringify( data))
+      //  navigate("/admin/dashboard")
+     } 
+     catch (error)
+      {
+      alert("Invalid Credentials", error.response.data)
+      console.log("error from submitHandle", error)
+    }
 };
 
+useEffect(()=>{
+  if(auth && auth?.token){
+    navigate('/admin/dashboard')
+    //'/admin/dashboard'
+  } //redirect if have token
+},[auth]); //dependencies
 
   
     
@@ -75,4 +110,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

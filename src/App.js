@@ -1,18 +1,19 @@
 import React from 'react'
 import {  Route, Routes } from 'react-router-dom'
 import LandingPage from './Screens/LandingPage'
-import Login from './Components/Login/Login'
+// import Login from './Components/Login/Login'
 import PageNotFound from './Components/404Page/PageNotFound'
-import PatientLogin from './Components/Admin/PatientLogin'
+// import PatientLogin from './Components/Admin/PatientLogin'
 import AboutPage from './Screens/AboutPage'
 import MissionPage from './Screens/MissionPage'
 import ContactPage from './Screens/ContactPage'
-import LoginPage from './Screens/LoginPage'
+// import LoginPage from './Screens/LoginPage'
 import Dashboard from './Screens/Admin/Dashboard'
 import PatientInfo from './Screens/Admin/PatientInfo'
 import DoctorInfo from './Screens/Admin/DoctorInfo'
 import PatientHealth from './Screens/Admin/PatientHealth'
 import PatientRecord from './Screens/Patient/PatientRecord'
+import AdminLogin from './Components/Admin/AdminLogin'
 
 const App = () => {
   return (
@@ -22,8 +23,8 @@ const App = () => {
     <Route path='/about' element={<AboutPage/>}/>
     <Route path='/mission' element={<MissionPage/>}/>
     <Route path='/contact' element={<ContactPage/>}/>
-    <Route path='/login' element={<LoginPage/>}/>
-    <Route path='/login-as-doctor' element={<Login/>}/>
+    {/* <Route path='/login' element={<LoginPage/>}/> */}
+    {/* <Route path='/login-as-doctor' element={<Login/>}/> */}
 
 
     {/* <Route path='/patient-record' element={<PatientRecord/>}/> */}
@@ -31,11 +32,12 @@ const App = () => {
 
 
     {/* admin */}
-    <Route path='/patientlogin' element={<PatientLogin/>}/>
-    <Route path='/admin' element={<Dashboard/>}/>
+    <Route path='/admin' element={<AdminLogin/>}/>
+    <Route path='/admin/dashboard' element={<Dashboard/>}/>
     <Route path='/admin/create-patient-credentials' element={<PatientInfo/>}/>
     <Route path='/admin/create-doctor-credentials' element={<DoctorInfo/>}/>
     <Route path='/admin/add-patient-h-data' element={<PatientHealth/>}/>
+   
     
 
     {/* <Route path='/patienthealth' element={<PatientHealth/>}/>
