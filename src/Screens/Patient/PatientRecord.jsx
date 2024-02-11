@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PatientTable from './PatientTable'
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../Components/Navbar'
+
 
 
 const PatientRecord = () => {
 
-    const [time,setTime] = useState(new Date())
+    // const [time,setTime] = useState(new Date())
 
   return (
     <>
@@ -15,9 +16,6 @@ const PatientRecord = () => {
           <h1 className="text-indigo-600 text-4xl font-semibold">
             Doctor Registration Form
             <br />
-            {time.toLocaleTimeString()}
-            <br />
-            {time.toLocaleDateString()}
           </h1>
         </div>
         <div className='hidden md:block'>

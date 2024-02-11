@@ -1,8 +1,8 @@
 import React from 'react'
 import Carousel from '../Components/Carousel/Carousel'
 import About from '../Components/About/About'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 const LandingPage = () => {
   return (

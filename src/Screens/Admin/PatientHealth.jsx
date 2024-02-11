@@ -55,7 +55,7 @@ const submitHandle = async (e) =>{
           <h1 className="text-indigo-600 text-4xl font-semibold">
             Patient Health Data Form
             
-      View created at {time.toLocaleTimeString()}
+      {/* View created at {time.toLocaleTimeString()} */}
           </h1>
         </div>
         <div className="mt-6 max-w-lg">
@@ -70,7 +70,7 @@ const submitHandle = async (e) =>{
                   onChange={handleChange}
                   value={userInfo.fullname}
                   placeholder="Enter name here..."
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
               <div>
                 <label className="font-medium">Father Name</label>
@@ -81,7 +81,7 @@ const submitHandle = async (e) =>{
                   onChange={handleChange}
                   value={userInfo.fathername}
                   placeholder="Enter father name here..."
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
             </div>
             <div className="flex flex-col items-center gap-y-5 gap-x-6 [&>*]:w-full sm:flex-row">
@@ -94,7 +94,7 @@ const submitHandle = async (e) =>{
                   onChange={handleChange}
                   value={userInfo.CNIC}
                   placeholder="Enter CNIC here..."
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
               <div>
                 <label className="font-medium">Date of Birth</label>
@@ -105,7 +105,7 @@ const submitHandle = async (e) =>{
                   onChange={handleChange}
                   value={userInfo.DOB}
                   placeholder=""
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
             </div>
             <div>
@@ -117,7 +117,7 @@ const submitHandle = async (e) =>{
                 onChange={handleChange}
                 value={userInfo.email}
                 placeholder="Enter email here..."
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
             </div>
             <div className="flex flex-col items-center gap-y-5 gap-x-6 [&>*]:w-full sm:flex-row">
               <div>
@@ -132,7 +132,7 @@ const submitHandle = async (e) =>{
                   name="gender"
                   onChange={handleChange}
                   value={userInfo.gender}
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 >
                   <option selected>Choose Gender</option>
                   <option value="male">Male</option>
@@ -154,7 +154,7 @@ const submitHandle = async (e) =>{
                     name="phone"
                     value={userInfo.phone}
                     onChange={handleChange}
-                    className="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                    className="w-full pl-[4.5rem] pr-3 py-2 text-gray-900  appearance-none  outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ const submitHandle = async (e) =>{
                   onChange={handleChange}
                   placeholder="Enter password here..."
                   required
-                  className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+                  className="w-full mt-2 px-3 py-2 text-gray-900 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
             </div>
             <button type="submit" className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">

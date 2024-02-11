@@ -14,6 +14,14 @@ import DoctorInfo from './Screens/Admin/DoctorInfo'
 import PatientHealth from './Screens/Admin/PatientHealth'
 import PatientRecord from './Screens/Patient/PatientRecord'
 import AdminLogin from './Components/Admin/AdminLogin'
+import ProtectedRoutes from './Components/ProtectedRoutes'
+import DoctorLogin from './Components/Doctor/DoctorLogin'
+import DoctorNavbar from './Components/Doctor/DoctorNavbar'
+import DoctorInformation from './Screens/Doctor/DoctorInformation'
+import LoginPage from './Screens/LoginPage'
+import DoctorABC from './Components/Doctor/DoctorABC'
+import DoctorView from './Screens/Doctor/DoctorView'
+
 
 const App = () => {
   return (
@@ -23,7 +31,7 @@ const App = () => {
     <Route path='/about' element={<AboutPage/>}/>
     <Route path='/mission' element={<MissionPage/>}/>
     <Route path='/contact' element={<ContactPage/>}/>
-    {/* <Route path='/login' element={<LoginPage/>}/> */}
+    <Route path='/patient-login' element={<LoginPage/>}/>
     {/* <Route path='/login-as-doctor' element={<Login/>}/> */}
 
 
@@ -33,12 +41,18 @@ const App = () => {
 
     {/* admin */}
     <Route path='/admin' element={<AdminLogin/>}/>
-    <Route path='/admin/dashboard' element={<Dashboard/>}/>
-    <Route path='/admin/create-patient-credentials' element={<PatientInfo/>}/>
-    <Route path='/admin/create-doctor-credentials' element={<DoctorInfo/>}/>
-    <Route path='/admin/add-patient-h-data' element={<PatientHealth/>}/>
+    {/* <Route path='/admin/dashboard' element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>}/> */}
+    <Route path='/admin/dashboard' element={<ProtectedRoutes Component={Dashboard}/>}/>
+    <Route path='/admin/create-patient-credentials' element={<ProtectedRoutes Component={PatientInfo}/>}/>
+    <Route path='/admin/create-doctor-credentials' element={<ProtectedRoutes Component={DoctorInfo}/>}/>
+    <Route path='/admin/add-patient-h-data' element={<ProtectedRoutes Component={PatientHealth}/>}/>
+
+
+    {/*doctor*/}
    
-    
+    <Route path='/doctor-login' element={<DoctorLogin/>}/>
+    <Route path='/doctor' element={<ProtectedRoutes Component={DoctorView}/>}/>
+    <Route path='/doctor-information' element={<ProtectedRoutes Component={DoctorInformation}/>}/>
 
     {/* <Route path='/patienthealth' element={<PatientHealth/>}/>
     <Route path='/patientform' element={<Patientform/>}/> */}
@@ -53,4 +67,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

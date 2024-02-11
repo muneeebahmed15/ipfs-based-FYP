@@ -5,48 +5,66 @@ import axios from 'axios';
 
 const DoctorInfo = () => {
     const [userInfo, setUserInfo] = useState({
-    fullname : "",
-    fathername : "",
-    CNIC : "",
-    DOB : "",
-    email : "",
-    gender : "",
-    phone : "",
-    username : "",
-    password : ""
+      fullname : "",
+      fathername : "",
+      email : "",
+      username : "",
+      cnic:"",
+      DOB : "",
+      education:"",
+      gender : "",
+      phoneNo : "",
+      city : "",
+      password : ""
   });
-
 
   const handleChange =(e) =>{
     setUserInfo({...userInfo,[e.target.name]:e.target.value});
   }
 
-
 const submitHandle = async (e) =>{
   e.preventDefault();
-  console.log(userInfo);
+
+  const token = localStorage.getItem('auth');
+  const tokenData = JSON.parse(token);
+  const adminAccessToken = tokenData.adminAccessToken;
+  // console.log('Access Token:', adminAccessToken);
+
+
+  // console.log(userInfo);
   try {
-    const response = await axios.post('link', userInfo);
-    console.log(response.data)
+    const response = await axios.post("http://localhost:8000/api/admin/register-doctor", userInfo,
+    {
+      headers: {
+        Authorization: `Bearer ${adminAccessToken}`,
+      },});
+
+      const data = response.data;
+
+      const d = data.data;
+      
+    alert(d)
+    console.log(data)
+
     // console.log("Patient registered: ",response.data);
 } catch (err) {
     console.log('Error creating patient info:', err.response.data );// Log the detailed error message
     // console.log('Axios error:', err);
 }
-// setUserInfo({
-//   fullname : "",
-//   fathername : "",
-//   CNIC : "",
-//   DOB : "",
-//   email : "",
-//   gender : "",
-//   phone : "",
-//   username : "",
-//   password : ""
-// })
+setUserInfo({
+  fullname : "",
+  fathername : "",
+  cnic : "",
+  DOB : "",
+  email : "",
+  gender : "",
+  phoneNo : "",
+  username : "",
+  password : "",
+  city : "",
+    education:""  
+})
 }
-
-
 
   return (
     <Layout>
@@ -89,9 +107,9 @@ const submitHandle = async (e) =>{
                 <input
                   type="text"
                   required
-                  name="CNIC"
+                  name="cnic"
                   onChange={handleChange}
-                  value={userInfo.CNIC}
+                  value={userInfo.cnic}
                   placeholder="Enter CNIC here..."
                   className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
@@ -150,8 +168,8 @@ const submitHandle = async (e) =>{
                     type="number"
                     placeholder="+92 000 000000"
                     required
-                    name="phone"
-                    value={userInfo.phone}
+                    name="phoneNo"
+                    value={userInfo.phoneNo}
                     onChange={handleChange}
                     className="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
                 </div>
@@ -180,6 +198,28 @@ const submitHandle = async (e) =>{
                   required
                   className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
               </div>
+            </div>
+            <div>
+              <label className="font-medium">Education</label>
+              <input
+                type="text"
+                required
+                name="education"
+                onChange={handleChange}
+                value={userInfo.education}
+                placeholder="Enter email here..."
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
+            </div>
+            <div>
+              <label className="font-medium">Address</label>
+              <input
+                type="text"
+                required
+                name="city"
+                onChange={handleChange}
+                value={userInfo.city}
+                placeholder="Enter email here..."
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg" />
             </div>
             <button type="submit" className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
               Submit

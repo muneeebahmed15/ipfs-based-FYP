@@ -10,14 +10,11 @@ const Mission = () => {
       <img className="object-cover object-center rounded" alt="hero" src={about}/>
     </div>
     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-right mb-16 md:mb-0 items-center text-center">
-      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-        <br className="hidden lg:inline-block"/>readymade gluten
+      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Our Mission
       </h1>
-      <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+      <p className="mb-8 leading-relaxed">The mission of this web application is to revolutionize healthcare information management by providing patients with easy access to their records, empowering doctors with comprehensive insights for personalized care, and enabling administrators to maintain a secure and efficient system for patient registration and data management. By fostering transparency, collaboration, and accessibility, the application aims to enhance the overall quality of healthcare delivery and promote a patient-centric approach in medical practices.</p>
       <div className="flex justify-center">
-        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
-      </div>
+        </div>
     </div>
   </div>
 </section>

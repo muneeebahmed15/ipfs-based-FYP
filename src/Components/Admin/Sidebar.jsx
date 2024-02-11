@@ -1,26 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { sidenavs } from "./sidenav";
 import { BiUser } from "react-icons/bi";
 import { logo } from "../../Assets/index";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Sidebar = () => {
   const [active, setActive] = useState("");
+  const [auth, setAuth] = useContext(AuthContext);
+  const navigate = useNavigate();
  const pathname = useLocation().pathname;
+
+
+//  console.log(auth)
 
 const Clicks = (x) => {
    if(x.name !== 'Logout'){
     setActive(x)
    }
    else{
-    let ok = window.confirm("Are you sure, you want to logout?")
+    // console.log(auth);
+    setAuth({user: null, token:""});
+    // console.log(auth); 
+      navigate("/admin");
+    // let ok = window.confirm("Are you sure, you want to logout?");
+    // if(ok){
+      
+    // }
    }
 }
 
   return (
     <>
       <div
-        className={`bg-sidebar-color hidden md:block w-[16%] sticky top-0 h-screen`}
+        className={`bg-sidebar-color h-min-screen  hidden md:block w-[16%] sticky top-0 h-screen`}
       >
         <div className="py-5">
           <img

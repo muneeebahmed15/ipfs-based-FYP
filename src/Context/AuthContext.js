@@ -1,6 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 export const AuthContext = createContext();
+
+export const _AuthContext =()=> useContext(AuthContext); 
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(
@@ -9,12 +13,17 @@ export const AuthProvider = ({ children }) => {
     token: "",
  });
 
-  useEffect(()=>{
-    let data=localStorage.getItem("auth");
-    if(data){
-        setAuth(JSON.parse(data));
-    }
-  },[]);
+ useEffect(()=>{
+  let user =  Cookies.get("auth"); 
+ 
+  if(user){
+      setAuth(JSON.parse(user))
+  }
+},[])
+
+  axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.headers.common["Cookies"] = auth.token;
+
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
       {children}

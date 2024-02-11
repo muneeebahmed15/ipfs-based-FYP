@@ -1,6 +1,6 @@
 import logo from './logo.jpg';
-import about from './about.jpg';
-import background3 from './background3.jpg';
-import background6 from './background6.jpg';
+import about from './about.webp';
+import background1 from './background1.webp';
+import background2 from './background2.webp';
 
-export {logo,about,background3,background6};
+export {logo,about,background1,background2};

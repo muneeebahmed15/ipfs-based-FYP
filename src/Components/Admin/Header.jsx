@@ -20,12 +20,12 @@ const Header = ({open, setOpen}) => {
 
   return (
     <>
-   <nav className="bg-sidebar-color w-ful block md:hidden ">
+   <nav className="bg-gray-500 w-ful block md:hidden ">
           <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
               <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                   <Link>E-commerece {open ? "hello" : "bye"}</Link>
+                   <Link><b>Patient Record Storage System</b></Link>
                   <div className="md:hidden">
-                      <button className="text-gray-700 outline-none p-2 rounded-md "
+                      <button className="text-gray-100 outline-none p-2 rounded-md "
                           onClick={() => setOpen(!open)}
                       >
                           {

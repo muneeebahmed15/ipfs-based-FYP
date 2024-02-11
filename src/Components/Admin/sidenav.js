@@ -24,6 +24,8 @@ export const sidenavs = [
     },
     {
         name:"Logout",
-        icon : <BiLogOut/>, className:"mt-5"
+        icon : <BiLogOut/>, 
+     link:"/admin",
+        className:"mt-5"
     },
 ]
