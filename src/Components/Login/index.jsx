@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { logo } from "../../Assets";
 import { SubmitData } from "../../actions/common.actions";
+import { _AuthContext } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Login = () => {
+  const [auth, setAuth] = _AuthContext();
+  const router = useNavigate();
 
   const {loading, formdata, changeHandler, loginUser} = SubmitData("/patient/login");
 
+  useEffect(()=>{
+    if(auth?.token){
+      router(`/patient-home/${auth.user._id}`)
+     }
+   },[auth])
 
-  
-
-  
-
-    
   return (
     <>
       

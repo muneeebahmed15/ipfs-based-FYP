@@ -12,15 +12,13 @@ import Dashboard from './Screens/Admin/Dashboard'
 import PatientInfo from './Screens/Admin/PatientInfo'
 import DoctorInfo from './Screens/Admin/DoctorInfo'
 import PatientHealth from './Screens/Admin/PatientHealth'
-import PatientRecord from './Screens/Patient/PatientRecord'
 import AdminLogin from './Components/Admin/AdminLogin'
 import ProtectedRoutes from './Components/ProtectedRoutes'
 import DoctorLogin from './Components/Doctor/DoctorLogin'
-import DoctorNavbar from './Components/Doctor/DoctorNavbar'
 import DoctorInformation from './Screens/Doctor/DoctorInformation'
 import LoginPage from './Screens/LoginPage'
-import DoctorABC from './Components/Doctor/DoctorABC'
 import DoctorView from './Screens/Doctor/DoctorView'
+import PatientHome from './Screens/Patient/patient-home'
 
 
 const App = () => {
@@ -58,7 +56,7 @@ const App = () => {
     <Route path='/patientform' element={<Patientform/>}/> */}
 
     {/* Patient */}
-    <Route path='/patientrecord' element={<PatientRecord/>}/>
+    <Route path='/patient-home/:id' element={<PatientHome/>}/>
 
     <Route path='*' element={<PageNotFound/>}/>
 
