@@ -1,9 +1,10 @@
 import React from 'react'
 import { about } from '../../Assets'
+import LandingLayout from '../LandingLayout'
 
 const Mission = () => {
   return (
-    <>
+    <LandingLayout>
     <section className="text-gray-600 body-font">
   <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
   <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -18,7 +19,7 @@ const Mission = () => {
     </div>
   </div>
 </section>
-    </>
+    </LandingLayout>
   )
 }
 

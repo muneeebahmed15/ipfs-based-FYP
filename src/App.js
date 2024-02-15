@@ -1,13 +1,6 @@
 import React from 'react'
 import {  Route, Routes } from 'react-router-dom'
-import LandingPage from './Screens/LandingPage'
-// import Login from './Components/Login/Login'
 import PageNotFound from './Components/404Page/PageNotFound'
-// import PatientLogin from './Components/Admin/PatientLogin'
-import AboutPage from './Screens/AboutPage'
-import MissionPage from './Screens/MissionPage'
-import ContactPage from './Screens/ContactPage'
-// import LoginPage from './Screens/LoginPage'
 import Dashboard from './Screens/Admin/Dashboard'
 import PatientInfo from './Screens/Admin/PatientInfo'
 import DoctorInfo from './Screens/Admin/DoctorInfo'
@@ -16,20 +9,24 @@ import AdminLogin from './Components/Admin/AdminLogin'
 import ProtectedRoutes from './Components/ProtectedRoutes'
 import DoctorLogin from './Components/Doctor/DoctorLogin'
 import DoctorInformation from './Screens/Doctor/DoctorInformation'
-import LoginPage from './Screens/LoginPage'
 import DoctorView from './Screens/Doctor/DoctorView'
 import PatientHome from './Screens/Patient/patient-home'
+import About from './Components/About'
+import Contact from './Components/Contact'
+import Mission from './Components/Mission'
+import Login from './Components/Login'
+import Carousel from './Components/Carousel'
 
 
 const App = () => {
   return (
     <>
   <Routes>
-    <Route path='/' element={<LandingPage/>}/>
-    <Route path='/about' element={<AboutPage/>}/>
-    <Route path='/mission' element={<MissionPage/>}/>
-    <Route path='/contact' element={<ContactPage/>}/>
-    <Route path='/patient-login' element={<LoginPage/>}/>
+    <Route path='/' element={<Carousel/>}/>
+    <Route path='/about' element={<About/>}/>
+    <Route path='/mission' element={<Mission/>}/>
+    <Route path='/contact' element={<Contact/>}/>
+    <Route path='/patient-login' element={<Login/>}/>
     {/* <Route path='/login-as-doctor' element={<Login/>}/> */}
 
 

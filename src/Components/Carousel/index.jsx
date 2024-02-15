@@ -1,9 +1,10 @@
 import React from 'react'
 import { background1, background2 } from '../../Assets'
+import LandingLayout from '../LandingLayout'
 
 const Carousel = () => {
   return (
-    <>
+    <LandingLayout>
     <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active" data-bs-interval="10000">
@@ -22,7 +23,7 @@ const Carousel = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-    </>
+    </LandingLayout>
   )
 }
 

@@ -1,16 +1,22 @@
 import React from 'react'
-import { GettingPatient, SubmitData } from '../../actions/common.actions'
-import { _AuthContext } from '../../Context/AuthContext'
 import { useParams } from 'react-router-dom';
+import LandingLayout from '../../Components/LandingLayout';
+import { LoadData } from '../../actions/patient';
+import Footer from '../../Components/LandingLayout/Footer';
+import Navbar from '../../Components/LandingLayout/Navbar';
 
 const PatientHome = () => {
- const [auth] = _AuthContext();
-const {id} = useParams();
-{JSON.stringify(id)}  
+  
+  const {id} = useParams();
+  const {data, loading, healthRecord} = LoadData(id)
 
   return (
-    <div>PatientHome - {JSON.stringify(auth.user.role)}
+    <>
+    <Navbar/>
+    <div>{loading? "Loading...": <div>{JSON.stringify(healthRecord)}</div>}
     </div>
+    <Footer/>
+    </>
   )
 }
 

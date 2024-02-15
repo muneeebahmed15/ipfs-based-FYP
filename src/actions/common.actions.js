@@ -8,10 +8,7 @@ import Cookies from "js-cookie";
  const [auth, setAuth] = _AuthContext();
 
     const [loading, setLoading] = useState(false);
-    const [formdata, setformdata] = useState({
-        CNIC: "1234567890",
-        password: "patientB..",
-      });
+    const [formdata, setformdata] = useState({CNIC: "1234567890", password: "patientB..", });
 
       const changeHandler = (e) => {
         setformdata({ ...formdata, [e.target.name]: e.target.value });
@@ -45,13 +42,13 @@ import Cookies from "js-cookie";
         }
 
         const logoutUser = ()=>{
-                setAuth({user: null, token: ""})
-                Cookies.remove("auth");
+            Cookies.remove("auth");
+            setAuth({user: null, token: ""})
         }
 
         
 
-        return {loading,changeHandler, setformdata, loginUser}
+        return {loading,changeHandler, setformdata,formdata, loginUser,logoutUser}
  }
 
 //  export const GettingPatient = ()=>{

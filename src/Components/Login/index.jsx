@@ -3,6 +3,7 @@ import { logo } from "../../Assets";
 import { SubmitData } from "../../actions/common.actions";
 import { _AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import LandingLayout from "../LandingLayout";
 
 
 
@@ -20,7 +21,7 @@ const Login = () => {
    },[auth])
 
   return (
-    <>
+    <LandingLayout>
       
 <div className="flex flex-col justify-center items-center my-3">
       <div className="flex flex-col justify-center items-center border-2 rounded w-80 py-3">
@@ -70,7 +71,7 @@ const Login = () => {
       </div>
       </div>
 
-    </>
+    </LandingLayout>
   );
 };
 

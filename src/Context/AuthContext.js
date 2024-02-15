@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   axios.defaults.baseURL = "http://localhost:5000";
   // axios.defaults.headers.common["Cookies"] = auth.token;
-  // axios.defaults.headers.common["Authorization"] = `Bearer ${auth.token}`;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${auth.token}`;
 
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
