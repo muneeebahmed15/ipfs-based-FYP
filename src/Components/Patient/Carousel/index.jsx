@@ -1,6 +1,6 @@
 import React from 'react'
-import { background1, background2 } from '../../Assets'
-import LandingLayout from '../LandingLayout'
+import { background1, background2 } from '../../../Assets'
+import LandingLayout from '../../LandingLayout'
 
 const Carousel = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Layout from "../../Components/Admin/Layout";
+import Layout from "../../Components/Main/Admin/Layout";
 
 
 function PatientInfo() {

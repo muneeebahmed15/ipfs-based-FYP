@@ -109,14 +109,14 @@ const Navbar = () => {
                         }
                         <span className='hidden w-px h-6 bg-gray-300 md:block'></span>
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
-                            
-                             {auth?.token? <li>
-                                <p to="/patient-login" className="block py-3 mr-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={()=>setOpen(true)}>
+                  
+                             {auth?.token && auth?.user?.role ==="patient" ? <li>
+                                <p className="block py-3 mr-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={()=>setOpen(true)}>
                                     Profile
                                 </p>
-                                 <Link to="/patient-login" className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={logoutUser}>
+                                 <p className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={()=>logoutUser("/patient-login")}>
                                     Logout
-                                </Link></li> : <li> <Link to="/patient-login" className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
+                                </p></li> : <li> <Link to="/patient-login" className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
                                     Login
                                 </Link>
                             </li>}
@@ -224,7 +224,7 @@ const Navbar = () => {
           onChange={changeHandler}
           type={type}
         />
-        <small onClick={changeType} className='flex justify-end mb-2 hover: underline' role='button'>Show Password</small>
+        <small onClick={changeType} className='flex justify-end mb-2 hover: underline' role='button'>{type === "password"? "Show Password": "Hide Password"}</small>
     
 <Button variant="contained" onClick={updatePassword} role='button'>{passwordLoading? "Loading...":"Save Changes"}</Button>
   </Box>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { about } from '../../Assets'
-import LandingLayout from '../LandingLayout'
+import { about } from '../../../Assets'
+import LandingLayout from '../../LandingLayout'
 
 const Mission = () => {
   return (

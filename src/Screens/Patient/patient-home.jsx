@@ -2,21 +2,27 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import LandingLayout from '../../Components/LandingLayout';
 import { LoadData } from '../../actions/patient';
-import Footer from '../../Components/LandingLayout/Footer';
-import Navbar from '../../Components/LandingLayout/Navbar';
+import PatientTable from '../../Components/Tables/PatientTable';
 
 const PatientHome = () => {
   
   const {id} = useParams();
-  const {data, loading, healthRecord} = LoadData(id)
+  
+  
+  const { loading, healthRecord} = LoadData(id)
 
   return (
-    <>
-    <Navbar/>
-    <div>{loading? "Loading...": <div>{JSON.stringify(healthRecord)}</div>}
+    <LandingLayout>
+    <div>
+      <div className='flex justify-center my-4'> 
+      <span className='text-3xl font-semibold'>Patient Health Record</span>
+      </div>
+
+      <PatientTable data={healthRecord} loading={loading}/>
     </div>
-    <Footer/>
-    </>
+
+    </LandingLayout>
+    
   )
 }
 

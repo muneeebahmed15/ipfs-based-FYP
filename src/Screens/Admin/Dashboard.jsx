@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Layout from '../../Components/Admin/Layout';
+import Layout from "../../Components/Main/Admin/Layout";
 
 const Dashboard = () => {
 

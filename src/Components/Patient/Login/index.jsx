@@ -1,24 +1,25 @@
 import React, { useEffect } from "react";
-import { logo } from "../../Assets";
-import { SubmitData } from "../../actions/common.actions";
-import { _AuthContext } from "../../Context/AuthContext";
+import { logo } from "../../../Assets";
 import { useNavigate } from "react-router-dom";
-import LandingLayout from "../LandingLayout";
+import LandingLayout from "../../LandingLayout";
+import { _AuthContext } from "../../../Context/AuthContext";
+import { SubmitData } from "../../../actions/common.actions";
 
 
 
 
 const Login = () => {
   const [auth, setAuth] = _AuthContext();
+  const authToken = auth && auth?.token;
   const router = useNavigate();
 
   const {loading, formdata, changeHandler, loginUser} = SubmitData("/patient/login");
 
   useEffect(()=>{
-    if(auth?.token){
-      router(`/patient-home/${auth.user._id}`)
-     }
-   },[auth])
+    if(authToken){
+    router(`/patient-home/${auth?.user?._id}`)
+    } 
+  },[authToken]); 
 
   return (
     <LandingLayout>

@@ -1,17 +1,17 @@
-import React, { useContext, useState } from "react";
-import { sidenavs } from "./sidenav";
+import React, { useState } from "react";
+import { AdminNavs, DoctorNavs } from "./sidenav";
 import { BiUser } from "react-icons/bi";
-import { logo } from "../../Assets/index";
+import { logo } from '../../../Assets/index';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+import { _AuthContext } from "../../../Context/AuthContext";
 
 const Sidebar = () => {
   const [active, setActive] = useState("");
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = _AuthContext()
   const navigate = useNavigate();
  const pathname = useLocation().pathname;
 
-
+const data = auth?.user?.role === "admin" ? AdminNavs : auth?.user?.role === "doctor" ? DoctorNavs : "Who are you?"
 //  console.log(auth)
 
 const Clicks = (x) => {
@@ -50,7 +50,7 @@ const Clicks = (x) => {
             <BiUser /> <span>Muneeb Ahmed</span>
           </div>
 
-          {sidenavs.map((x) => {
+          {data.map((x) => {
             return (
               <Link
                 to={x.link}

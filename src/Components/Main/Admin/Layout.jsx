@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header';
-import useWindowDimensions from '../../Hook/useWindowDimensions';
+import useWindowDimensions from '../../../Hook/useWindowDimensions';
 
 const Layout = ({children}) => {
     const [open, setOpen] = useState(false);

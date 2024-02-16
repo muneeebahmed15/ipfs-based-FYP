@@ -1,7 +1,7 @@
 import React from 'react'
-import { about } from '../../Assets'
+import { about } from '../../../Assets'
 import { Link } from 'react-router-dom'
-import LandingLayout from '../LandingLayout'
+import LandingLayout from '../../LandingLayout'
 
 const About = () => {
   return (

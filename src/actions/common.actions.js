@@ -3,12 +3,14 @@ import { useState } from "react"
 import { _AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
  export const SubmitData = (url) =>{
  const [auth, setAuth] = _AuthContext();
+ const router = useNavigate();
 
     const [loading, setLoading] = useState(false);
-    const [formdata, setformdata] = useState({CNIC: "1234567890", password: "patientB..", });
+    const [formdata, setformdata] = useState({CNIC: "1234567890",email:"", password: "", });
 
       const changeHandler = (e) => {
         setformdata({ ...formdata, [e.target.name]: e.target.value });
@@ -19,7 +21,7 @@ import Cookies from "js-cookie";
             setLoading(true);
             try {
                 const res = await axios.post(url,formdata);
-                    // console.log(res.data.user)
+                    // console.log(res)
                 if(res.status === 200){
                     toast.success("Login Successfull");
                     setAuth(res.data);
@@ -28,22 +30,22 @@ import Cookies from "js-cookie";
 
             } catch (error) {
                 if(error.response.status === 401){
-                   toast.error("Password or CNIC is incorrect.")
+                   toast.error("Invalid Credentials.")
                 }else if(error.response.status === 404){
                     toast.error("User not found.");
                  }else{
                     toast.error("Internal server error");
                  }
-              
             }finally{
                 setLoading(false)
             }
 
         }
 
-        const logoutUser = ()=>{
+        const logoutUser = (url)=>{
             Cookies.remove("auth");
             setAuth({user: null, token: ""})
+            router(url)
         }
 
         

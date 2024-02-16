@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
-import { sidenavs } from './sidenav'
+import { AdminNavs, DoctorNavs, sidenavs } from './sidenav'
+import { _AuthContext } from '../../../Context/AuthContext';
 
 
 const Header = ({open, setOpen}) => {
+  const [auth] = _AuthContext()
     const [active, setActive] = useState("");
     const pathname = useLocation().pathname;
 
+    const data = auth?.user?.role === "admin" ? AdminNavs : auth?.user?.role === "doctor" ? DoctorNavs : "Who are you?"
+
+   
     const Clicks = (x) =>{
         if(x.name !== "Logout"){
             setActive(x)
@@ -40,7 +45,7 @@ const Header = ({open, setOpen}) => {
               </div>
               <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${ open ? 'block' : 'hidden'}`}>
                   <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                  {sidenavs.map((x) => {
+                  {data.map((x) => {
             return (
               <Link
                 to={x.link}

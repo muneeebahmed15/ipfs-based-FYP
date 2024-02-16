@@ -1,7 +1,7 @@
 import { AiFillDashboard, AiFillPoundCircle, AiOutlineOrderedList } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 
-export const sidenavs = [
+export const AdminNavs = [
     {
         name:"Dashboard",
         icon : <AiFillDashboard/>,
@@ -19,6 +19,35 @@ export const sidenavs = [
     },
     {
         name:"Create Doctor Credentials",
+        icon : <AiFillPoundCircle/>,
+        link : "/admin/create-doctor-credentials",
+    },
+    {
+        name:"Logout",
+        icon : <BiLogOut/>, 
+     link:"/admin",
+        className:"mt-5"
+    },
+]
+
+export const DoctorNavs = [
+    {
+        name:"Dashboard",
+        icon : <AiFillDashboard/>,
+        link : "/admin",
+    },
+    {
+        name:"All Patients",
+        icon : <AiFillDashboard/>,
+        link : "/admin/create-patient-credentials",
+    },
+    {
+        name:"Search Patient",
+        icon : <AiOutlineOrderedList/>,
+        link : "/admin/add-patient-h-data",
+    },
+    {
+        name:"My Patients",
         icon : <AiFillPoundCircle/>,
         link : "/admin/create-doctor-credentials",
     },
