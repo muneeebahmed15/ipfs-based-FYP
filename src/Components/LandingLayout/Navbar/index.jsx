@@ -40,7 +40,7 @@ const Navbar = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 800,
+        width: 550,
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
@@ -111,12 +111,12 @@ const Navbar = () => {
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                   
                              {auth?.token && auth?.user?.role ==="patient" ? <li>
-                                <p className="block py-3 mr-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={()=>setOpen(true)}>
+                                <p className="block  p-2 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline md:mr-3" onClick={()=>setOpen(true)}>
                                     Profile
                                 </p>
-                                 <p className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={()=>logoutUser("/patient-login")}>
+                                 <Link to={"/patient-login"} className="block p-2 mt-2 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline" onClick={logoutUser}>
                                     Logout
-                                </p></li> : <li> <Link to="/patient-login" className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
+                                </Link></li> : <li> <Link to="/patient-login" className="block p-2 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
                                     Login
                                 </Link>
                             </li>}
@@ -167,7 +167,7 @@ const Navbar = () => {
           required
           id="filled-basic"
           variant='filled'
-          label="Patient DOB"
+          label="Patient Gender"
           defaultValue={data.gender}
           className='mb-3 px-2' InputProps={{ readOnly: true }}
         />
@@ -175,7 +175,7 @@ const Navbar = () => {
           required
           id="filled-basic"
           variant='filled'
-          label="Patient DOB"
+          label="Patient phone"
           defaultValue={data.phone}
           className='mb-3 px-2' InputProps={{ readOnly: true }}
         />
@@ -183,7 +183,7 @@ const Navbar = () => {
           required
           id="filled-basic"
           variant='filled'
-          label="Patient DOB"
+          label="Patient username"
           defaultValue={data.username}
           className='mb-3 px-2' InputProps={{ readOnly: true }}
         />
@@ -194,6 +194,7 @@ const Navbar = () => {
   </Box>
 </Modal>
         </div>
+
         <Modal
   open={passwordModal}
   onClose={()=>setPasswordModal(false)}

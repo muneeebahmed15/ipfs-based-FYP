@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
-import { AdminNavs, DoctorNavs, sidenavs } from './sidenav'
+import { AdminNavs, DoctorNavs, sidenavs } from '../MainLayout/sidenav'
 import { _AuthContext } from '../../../Context/AuthContext';
 
 

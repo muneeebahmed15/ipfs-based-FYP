@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AdminNavs, DoctorNavs } from "./sidenav";
+import { AdminNavs, DoctorNavs } from "../MainLayout/sidenav";
 import { BiUser } from "react-icons/bi";
 import { logo } from '../../../Assets/index';
 import { Link, useLocation, useNavigate } from "react-router-dom";

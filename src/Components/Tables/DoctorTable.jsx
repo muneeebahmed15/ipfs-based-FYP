@@ -1,9 +1,12 @@
-import React from 'react'
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import React from 'react';
+import { FaRegFolderClosed } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const DoctorTable = ({data, loading}) => {
   return (
     <div>
-    <TableContainer className='container'>
+    <TableContainer className='container p-2'>
     <Table sx={{ minWidth: 450 }} aria-label="simple table">
       <TableHead >
         <TableRow>
@@ -21,14 +24,16 @@ const DoctorTable = ({data, loading}) => {
         {data.map((x) => (
           <TableRow key={x._id} >
             <TableCell component="th" scope="row">
-             {x.createdAt.slice(0,10)} //new Date(x.createdAt).toLocaleDateString()
+             {x.createdAt.slice(0,10)}
             </TableCell>
              <TableCell>{x.fullname}</TableCell>
             <TableCell>{x.email}</TableCell>
             <TableCell>{x.gender}</TableCell>
-            <TableCell>{x.DOB}</TableCell>
+            <TableCell>{x.DOB.slice(0,10)}</TableCell>
             <TableCell>{x.phone}</TableCell>
-            <TableCell>icon</TableCell>
+            <TableCell>
+              <Link to={`/doctor/patient/${x._id}`}> <FaRegFolderClosed size={20} role='buttons'/></Link>
+              </TableCell>
           </TableRow>
         ))}
       </TableBody>}

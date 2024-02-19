@@ -11,11 +11,13 @@ import { useNavigate } from "react-router-dom";
 
     const [loading, setLoading] = useState(false);
     const [formdata, setformdata] = useState({CNIC: "1234567890",email:"", password: "", });
+    const [user, setUser] = useState("");
+
+   
 
       const changeHandler = (e) => {
         setformdata({ ...formdata, [e.target.name]: e.target.value });
       };
-
 
         const loginUser = async()=>{
             setLoading(true);
@@ -33,6 +35,8 @@ import { useNavigate } from "react-router-dom";
                    toast.error("Invalid Credentials.")
                 }else if(error.response.status === 404){
                     toast.error("User not found.");
+                 }else if(error.response.status === 400){
+                    toast.error("All fields are required.");
                  }else{
                     toast.error("Internal server error");
                  }
@@ -42,15 +46,21 @@ import { useNavigate } from "react-router-dom";
 
         }
 
-        const logoutUser = (url)=>{
+        const logoutUser = ()=>{
             Cookies.remove("auth");
             setAuth({user: null, token: ""})
-            router(url)
+            // router(url || "/patient-login")
         }
 
         
 
-        return {loading,changeHandler, setformdata,formdata, loginUser,logoutUser}
+        return {loading,
+            changeHandler,
+             setformdata,
+             formdata,
+              loginUser,
+              logoutUser,
+            }
  }
 
 //  export const GettingPatient = ()=>{
