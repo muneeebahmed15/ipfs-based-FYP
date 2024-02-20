@@ -8,7 +8,7 @@ const MainLogin = () => {
  const [auth] = _AuthContext();
  const authToken = auth && auth?.token;
 
- const router = useNavigate();
+ const navigate = useNavigate();
 
   const [user, setUser] = useState("doctor");
 const { loginUser, formdata, changeHandler, loading} = SubmitData(user ==="admin"? "users/login" :  "doctor/login" );
@@ -18,14 +18,14 @@ const checkUser = (e)=>{
 }
 
 useEffect(()=>{
-    if(authToken){
-      if(user === "doctor"){
-      router("/doctor")}
-    }else if(user === "admin"){
-      router("/")
-    }else{router("/main-login")}
-},[authToken, user, router])
-
+    if(authToken && auth?.user?.role === "admin"){
+        navigate("/admin/dashboard")
+    }else if(authToken && auth?.user?.role === "doctor") {
+      navigate("/doctor/dashboard");
+    }else{
+      navigate("/main-login");
+    }
+},[authToken, auth])
 
 
   return (

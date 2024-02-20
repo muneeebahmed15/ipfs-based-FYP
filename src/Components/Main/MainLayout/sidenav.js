@@ -5,22 +5,32 @@ export const AdminNavs = [
     {
         name:"Dashboard",
         icon : <AiFillDashboard/>,
-        link : "/admin",
+        link : "/admin/dashboard",
     },
     {
-        name:"Create Patient Credentials",
+        name:"Create Patient",
         icon : <AiFillDashboard/>,
-        link : "/admin/create-patient-credentials",
+        link : "/admin/create-patient",
     },
     {
         name:"Add Patient Health Data",
         icon : <AiOutlineOrderedList/>,
-        link : "/admin/add-patient-h-data",
+        link : "/admin/add-patient-data",
     },
     {
-        name:"Create Doctor Credentials",
+        name:"Create Doctor",
         icon : <AiFillPoundCircle/>,
-        link : "/admin/create-doctor-credentials",
+        link : "/admin/create-doctor",
+    },
+    {
+        name:"View All Patients",
+        icon : <AiFillPoundCircle/>,
+        link : "/admin/view-all-patients",
+    },
+    {
+        name:"View All Doctors",
+        icon : <AiFillPoundCircle/>,
+        link : "/admin/view-all-doctors",
     }
    
 ]

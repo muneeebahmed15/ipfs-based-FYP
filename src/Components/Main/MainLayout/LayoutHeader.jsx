@@ -1,6 +1,5 @@
-import { Box, Button, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import { Box, Button, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import React, { useState } from 'react'
-import DoctorInfo from '../../../Screens/Admin/DoctorInfo';
 import { DoctorNavs } from './sidenav';
 import { SubmitData } from '../../../actions/common.actions';
 import { Link } from 'react-router-dom';

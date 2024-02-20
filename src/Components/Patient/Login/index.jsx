@@ -17,7 +17,7 @@ const Login = () => {
 
   useEffect(()=>{
     if(authToken){
-    router(`/patient-home/${auth?.user?._id}`)
+    router(`/patient/home/${auth?.user?._id}`)
     } 
   },[authToken]); 
 
