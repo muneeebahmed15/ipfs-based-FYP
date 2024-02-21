@@ -9,7 +9,7 @@ const TxtInput = ({label, name, value, onChange}) => {
          name={name} 
          value={value} 
          onChange={onChange} 
-         variant="filled"  className="px-2 mt-2 md:w-8 xs:w-full"/>
+         variant="filled"  className="px-2 mt-2"/>
        </div>
   )
 }

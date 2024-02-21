@@ -13,7 +13,7 @@ const CreatePatient = () => {
   data.admin_id = auth?.user?._id;
 
   return (
-    <MainLayout>
+    <>
       <div className='flex flex-wrap'>
       <TxtInput label={"Name"} name={"fullname"} value={data.fullname} onChange={changeHandler}/>
       <TxtInput label={"Father Name"} name={"fathername"} value={data.fathername} onChange={changeHandler}/>
@@ -25,7 +25,7 @@ const CreatePatient = () => {
       <TxtInput label={"Username"} name={"username"} value={data.username} onChange={changeHandler}/>
       <TxtInput label={"Password"} name={"password"} value={data.password} onChange={changeHandler}/>
       </div>
-      </MainLayout>
+      </>
   )
 }
 

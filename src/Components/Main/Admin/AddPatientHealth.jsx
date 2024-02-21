@@ -4,11 +4,11 @@ import { TextField } from '@mui/material'
 
 const AddPatientHealth = () => {
   return (
-    <MainLayout>
+    <>
       <div>
-      
+      aaaa
       </div>
-    </MainLayout>
+    </>
   )
 }
 

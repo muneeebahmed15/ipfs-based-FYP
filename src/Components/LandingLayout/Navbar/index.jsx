@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { logo } from '../../../Assets'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { _AuthContext } from '../../../Context/AuthContext'
 import { SubmitData } from '../../../actions/common.actions'
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
@@ -10,6 +10,7 @@ const Navbar = () => {
    const {id} = useParams()
   const [auth] = _AuthContext();
  const {data, loading} = LoadData(id);
+ const router = useNavigate();
 
    const {logoutUser} = SubmitData();
   const {updatePassword, loading : passwordLoading, changeHandler} = Updation();
@@ -65,6 +66,13 @@ const Navbar = () => {
         setOpen(false);
       }
 
+      const authToken = auth && auth?.token && auth?.user?.role === "patient";
+      useEffect(()=>{
+        if(authToken){
+            router(`/patient/home/${auth?.user?._id}`)
+        }
+      },[authToken])
+
     return (
         <>
         <nav className="bg-gray-900 border-b w-full md:static md:text-sm md:border-none">
@@ -97,7 +105,7 @@ const Navbar = () => {
                 </div>
                 <div className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'}`}>
                     <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-                        {!auth?.token && navigation.map((item, idx) => {
+                        {!authToken && navigation.map((item, idx) => {
                                 return (
                                     <li key={idx} className="text-white hover:text-gray-600">
                                         <Link to={item.path} className="block">
@@ -106,7 +114,7 @@ const Navbar = () => {
                                     </li>
                                 )
                             })
-                        }
+                      }
                         <span className='hidden w-px h-6 bg-gray-300 md:block'></span>
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                   

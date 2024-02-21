@@ -3,7 +3,7 @@ import MainLayout from '../MainLayout'
 
 const MyPatients = () => {
   return (
-    <MainLayout>MyPatients</MainLayout>
+    <>MyPatients</>
   )
 }
 

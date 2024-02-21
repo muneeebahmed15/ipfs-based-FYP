@@ -3,9 +3,9 @@ import MainLayout from '../MainLayout'
 
 const ViewAllPatient = () => {
   return (
-    <MainLayout>
+    <>
       All Patients
-    </MainLayout>
+    </>
   )
 }
 

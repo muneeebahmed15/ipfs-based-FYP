@@ -6,9 +6,9 @@ import DoctorTable from '../../Tables/DoctorTable';
 const AllPatients = () => {
  const {loadPatients, loading, list} = LoadData();
   return (
-    <MainLayout>
+    <>
         <DoctorTable data={list} loading={loading} />
-    </MainLayout>
+    </>
   )
 }
 

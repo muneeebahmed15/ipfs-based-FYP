@@ -21,6 +21,8 @@ import AddPatientHealth from './Components/Main/Admin/AddPatientHealth'
 import ViewAllPatient from './Components/Main/Admin/ViewAllPatient'
 import ViewAllDoctor from './Components/Main/Admin/ViewAllDoctor'
 import PatientRoutes from './Components/Patient/patient-routes'
+import DoctorRoutes from './Components/Main/Doctor/doctor-routes'
+import AdminRoutes from './Components/Main/Admin/admin-routes'
 
 
 const App = () => {
@@ -41,24 +43,27 @@ const App = () => {
    
 
 
-<Route path='/layout' element={<MainLayout/>}/>
+       <Route path='/main-login' element={<MainLogin/>}/>
 
     {/* admin */}
-    <Route path='/main-login' element={<MainLogin/>}/>
-    <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
-    <Route path='/admin/create-patient' element={<CreatePatient/>}/>
-    <Route path='/admin/create-doctor' element={<CreateDoctor/>}/>
-    <Route path='/admin/add-patient-data' element={<AddPatientHealth/>}/>
-    <Route path='/admin/view-all-patients' element={<ViewAllPatient/>}/>
-    <Route path='/admin/view-all-doctors' element={<ViewAllDoctor/>}/>
+    <Route path='/admin' element={<AdminRoutes/>}>
+    <Route path='dashboard' element={<AdminDashboard/>}/>
+    <Route path='create-patient' element={<CreatePatient/>}/>
+    <Route path='create-doctor' element={<CreateDoctor/>}/>
+    <Route path='add-patient-data' element={<AddPatientHealth/>}/>
+    <Route path='view-all-patients' element={<ViewAllPatient/>}/>
+    <Route path='view-all-doctors' element={<ViewAllDoctor/>}/>
+    </Route>
    
 
     {/*doctor*/}
-   <Route path='/doctor/dashboard' element={<Dashboard/>}/>
-   <Route path='/doctor/all-patients' element={<AllPatients/>}/>
-   <Route path='/doctor/search-patients' element={<SearchPatients/>}/>
-   <Route path='/doctor/my-patients' element={<MyPatients/>}/>
-   <Route path='/doctor/patient/:id' element={<SinglePatient/>}/>
+   <Route path='/doctor' element={<DoctorRoutes/>}>
+   <Route path='dashboard' element={<Dashboard/>}/>
+   <Route path='all-patients' element={<AllPatients/>}/>
+   <Route path='search-patients' element={<SearchPatients/>}/>
+   <Route path='my-patients' element={<MyPatients/>}/>
+   <Route path='patient/:id' element={<SinglePatient/>}/>
+   </Route>
     
     {/* Patient */}
 

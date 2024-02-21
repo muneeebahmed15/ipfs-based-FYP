@@ -14,12 +14,12 @@ const SinglePatient = () => {
     
 
   return (
-    <MainLayout>
+    <>
         {loading? "Loading...":<>
         <PatientFiller list={list} admin={admin} health={health} loading={loading}/>
         </>
       }
-    </MainLayout>
+    </>
   )
 }
 

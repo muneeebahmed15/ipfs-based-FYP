@@ -15,7 +15,7 @@ const SearchPatients = () => {
   }
 
   return (
-    <MainLayout>
+    <>
       <div className=''>
 
         <div>
@@ -35,7 +35,7 @@ const SearchPatients = () => {
       <PatientFiller list={list} admin={admin} health={health} loading={loading}/>
       </div>
       
-    </MainLayout>
+    </>
   )
 }
 

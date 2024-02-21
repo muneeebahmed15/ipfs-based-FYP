@@ -1,5 +1,5 @@
 import { AiFillDashboard, AiFillPoundCircle, AiOutlineOrderedList } from "react-icons/ai";
-import { BiLogOut } from "react-icons/bi";
+
 
 export const AdminNavs = [
     {
