@@ -1,10 +1,12 @@
 import React from 'react'
-import MainLayout from '../MainLayout'
+import AdminTable from '../../Tables/AdminTable'
+import { LoadData } from '../../../actions/doctor';
 
 const ViewAllPatient = () => {
+  const { loading, list} = LoadData();
   return (
     <>
-      All Patients
+      <AdminTable loading={loading} data={list}/>
     </>
   )
 }

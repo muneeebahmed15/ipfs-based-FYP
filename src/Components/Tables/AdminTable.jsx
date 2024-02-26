@@ -3,7 +3,7 @@ import React from 'react';
 import { FaRegFolderClosed } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
-const DoctorTable = ({data, loading}) => {
+const AdminTable = ({data, loading}) => {
   return (
     <div>
     <TableContainer className='container p-2'>
@@ -32,7 +32,7 @@ const DoctorTable = ({data, loading}) => {
             <TableCell>{x.DOB.slice(0,10)}</TableCell>
             <TableCell>{x.phone}</TableCell>
             <TableCell>
-              <Link to={`/doctor/patient/${x._id}`}> <FaRegFolderClosed size={20} role='buttons'/></Link>
+              <Link to={`/admin/patient-record/${x._id}`}> <FaRegFolderClosed size={20} role='buttons'/></Link>
               </TableCell>
           </TableRow>
         ))}
@@ -43,4 +43,4 @@ const DoctorTable = ({data, loading}) => {
   )
 }
 
-export default DoctorTable
+export default AdminTable

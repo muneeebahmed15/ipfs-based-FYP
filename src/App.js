@@ -8,7 +8,6 @@ import Contact from './Components/Patient/Contact'
 import Login from './Components/Patient/Login'
 import Carousel from './Components/Patient/Carousel'
 import Mission from './Components/Patient/Mission'
-import MainLayout from './Components/Main/MainLayout'
 import AllPatients from './Components/Main/Doctor/AllPatients'
 import SearchPatients from './Components/Main/Doctor/SearchPatients'
 import MyPatients from './Components/Main/Doctor/MyPatients'
@@ -23,6 +22,7 @@ import ViewAllDoctor from './Components/Main/Admin/ViewAllDoctor'
 import PatientRoutes from './Components/Patient/patient-routes'
 import DoctorRoutes from './Components/Main/Doctor/doctor-routes'
 import AdminRoutes from './Components/Main/Admin/admin-routes'
+import AddSinglePatient from './Components/Main/Admin/AddSinglePatient'
 
 
 const App = () => {
@@ -53,6 +53,7 @@ const App = () => {
     <Route path='add-patient-data' element={<AddPatientHealth/>}/>
     <Route path='view-all-patients' element={<ViewAllPatient/>}/>
     <Route path='view-all-doctors' element={<ViewAllDoctor/>}/>
+    <Route path='patient-record/:id' element={<AddSinglePatient/>}/>
     </Route>
    
 

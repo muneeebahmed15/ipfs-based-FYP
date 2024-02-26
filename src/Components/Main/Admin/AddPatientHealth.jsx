@@ -1,13 +1,12 @@
 import React from 'react'
-import MainLayout from '../MainLayout'
-import { TextField } from '@mui/material'
+import AdminTable from '../../Tables/AdminTable'
+import { LoadData } from '../../../actions/doctor'
 
 const AddPatientHealth = () => {
+  const { loading, list} = LoadData();
   return (
     <>
-      <div>
-      aaaa
-      </div>
+      <AdminTable loading={loading} data={list}/>
     </>
   )
 }

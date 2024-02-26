@@ -18,7 +18,7 @@ export const AdminNavs = [
         link : "/admin/add-patient-data",
     },
     {
-        name:"Create Doctor",
+        name:"Add Doctor",
         icon : <AiFillPoundCircle/>,
         link : "/admin/create-doctor",
     },

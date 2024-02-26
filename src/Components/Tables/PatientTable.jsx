@@ -2,10 +2,11 @@ import React from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 
-const PatientTable = ({data, loading, icon}) => {
+const PatientTable = ({data, loading, icon, from}) => {
+
 
   return (
-    <div>
+    <>
     <TableContainer className='container'>
     <Table sx={{ minWidth: 450 }} aria-label="simple table">
       <TableHead >
@@ -14,7 +15,9 @@ const PatientTable = ({data, loading, icon}) => {
           <TableCell>Problem</TableCell>
           <TableCell>Suggestion</TableCell>
           <TableCell>Future Visit</TableCell>
-          {icon === "noicon"? "": <TableCell></TableCell>}
+          {from && <> <TableCell>Added By</TableCell>
+              <TableCell>Checked By</TableCell> </> }
+          {icon && <TableCell></TableCell>}
         </TableRow>
       </TableHead>
       {loading ? "Loading...":
@@ -27,13 +30,15 @@ const PatientTable = ({data, loading, icon}) => {
             <TableCell>{x.problem}</TableCell>
             <TableCell>{x.suggestion}</TableCell>
             <TableCell>{x.futureVisit}</TableCell>
-            {icon === "noicon"? "" : <TableCell>"icon"</TableCell>}
+            {from && <><TableCell>{x.admin_id.name}</TableCell>
+                <TableCell>{ x.doctor_id?.fullname }</TableCell></>}
+            {icon && <TableCell>"icon"</TableCell>}
           </TableRow>
         ))}
       </TableBody>}
     </Table>
   </TableContainer>
-    </div>
+    </>
   )
 }
 
