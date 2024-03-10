@@ -23,6 +23,7 @@ import PatientRoutes from './Components/Patient/patient-routes'
 import DoctorRoutes from './Components/Main/Doctor/doctor-routes'
 import AdminRoutes from './Components/Main/Admin/admin-routes'
 import AddSinglePatient from './Components/Main/Admin/AddSinglePatient'
+import Test from './Components/test'
 
 
 const App = () => {
@@ -56,7 +57,7 @@ const App = () => {
     <Route path='patient-record/:id' element={<AddSinglePatient/>}/>
     </Route>
    
-
+<Route path='/test' element={<Test/>}/>
     {/*doctor*/}
    <Route path='/doctor' element={<DoctorRoutes/>}>
    <Route path='dashboard' element={<Dashboard/>}/>

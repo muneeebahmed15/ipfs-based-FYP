@@ -1,11 +1,16 @@
 import { Box, Button, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import React, { useState } from 'react'
-import { DoctorNavs } from './sidenav';
+import { AdminNavs, DoctorNavs } from './sidenav';
 import { SubmitData } from '../../../actions/common.actions';
 import { Link } from 'react-router-dom';
+import { _AuthContext } from '../../../Context/AuthContext';
 
 const LayoutHeader = () => {
+ const [auth] = _AuthContext();
  const {logoutUser} = SubmitData("/main-login");
+
+ let data =  auth?.user?.role === "admin" ? AdminNavs : auth?.user?.role === "doctor"? DoctorNavs : []
+ 
 
   const [open, setOpen] = useState(false);
   return (
@@ -35,12 +40,12 @@ const LayoutHeader = () => {
       onKeyDown={()=>setOpen(true)}
     >
       <List>
-      {DoctorNavs.map((x, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={x.name} />
-            </ListItemButton>
-          </ListItem>
+      {data.map((x, index) => (
+          <Link to={x.link}><ListItem key={index} disablePadding>
+          <ListItemButton>
+            <ListItemText primary={x.name} />
+          </ListItemButton>
+        </ListItem></Link>
         ))}
       </List>
   

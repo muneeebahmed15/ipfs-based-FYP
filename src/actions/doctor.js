@@ -4,7 +4,7 @@ import { _AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 
 
-export const LoadData = ()=>{
+export const LoadData = (url)=>{
     const [auth] = _AuthContext();
     const authToken = auth && auth?.token;
 
@@ -15,7 +15,7 @@ export const LoadData = ()=>{
    const loadPatients = async ()=>{
     setLoading(true);
    try {
-    const res = await axios.get("/patient/get-all-patients");
+    const res = await axios.get(url);
     // console.log(res);
     setList(res.data);
    } catch (error) {
@@ -32,7 +32,7 @@ useEffect(()=>{
 },[authToken])
 
 
-   return {loading, loadPatients, list}
+   return {loading, list}
 }
 
 export const LoadSinglePatient = (id) =>{

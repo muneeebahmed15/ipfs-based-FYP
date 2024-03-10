@@ -15,7 +15,7 @@ const PatientTable = ({data, loading, icon, from}) => {
           <TableCell>Problem</TableCell>
           <TableCell>Suggestion</TableCell>
           <TableCell>Future Visit</TableCell>
-          {from && <> <TableCell>Added By</TableCell>
+          {from && <>
               <TableCell>Checked By</TableCell> </> }
           {icon && <TableCell></TableCell>}
         </TableRow>
@@ -30,14 +30,16 @@ const PatientTable = ({data, loading, icon, from}) => {
             <TableCell>{x.problem}</TableCell>
             <TableCell>{x.suggestion}</TableCell>
             <TableCell>{x.futureVisit}</TableCell>
-            {from && <><TableCell>{x.admin_id.name}</TableCell>
-                <TableCell>{ x.doctor_id?.fullname }</TableCell></>}
+            {from && <>
+                <TableCell>{ x.doctor_id.fullname }</TableCell></>}
             {icon && <TableCell>"icon"</TableCell>}
           </TableRow>
         ))}
       </TableBody>}
     </Table>
   </TableContainer>
+
+  
     </>
   )
 }

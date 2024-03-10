@@ -18,12 +18,12 @@ const PatientRoutes = () => {
         console.log(error)
     }
 };
-
+const authToken = auth && auth?.token;
 useEffect(()=>{
-    if(auth?.token){
+    if(authToken){
         fetchingCurrentUser();
     }
-},[auth && auth?.token]);
+},[authToken]);
 
   return loading? <Redirecting/> : (
     <LandingLayout>

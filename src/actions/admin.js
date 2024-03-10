@@ -7,7 +7,7 @@ import { _AuthContext } from "../Context/AuthContext";
 export const RegisterData = ( url ) =>{
     const[loading, setLoading] = useState();
     const[data, setData] = useState({
-        role:"patient",
+        role:"",
         fullname:"",
         fathername:"",
         CNIC:"",
@@ -18,7 +18,7 @@ export const RegisterData = ( url ) =>{
         username:"",
         password:""
     });
- 
+
     const changeHandler = (e) => {
         setData({...data, [e.target.name] : e.target.value})
     }
@@ -28,7 +28,7 @@ export const RegisterData = ( url ) =>{
         try {
             const res = await axios.post(url,data);
             if(res.status === 200){
-                toast.success("Patient registered successfully");
+                toast.success("User registered successfully");
                 setData({
                     role:"",
                 fullname:"",
@@ -46,7 +46,7 @@ export const RegisterData = ( url ) =>{
                 toast.error("All fields are manadatory");
             }
            else if(error.response.status === 409){
-                toast.error("Patient already registered");
+                toast.error("User already registered");
             }else{
                 toast.error("Data is not valid");
             }
@@ -62,6 +62,7 @@ export const RegisterData = ( url ) =>{
 export const PatientHealth = ( id ) =>{
   const [auth] = _AuthContext();
   const authToken = auth && auth?.token;
+
   const [ loading, setLoading ] = useState(false);
   const [ list, setList ] = useState([]);
 
@@ -84,5 +85,92 @@ export const PatientHealth = ( id ) =>{
         }
   },[authToken])
 
-  return { loading, list }
+  return { loading, list, loadHealth }
 }
+
+// export const UsePatient = () =>{
+//     const [ loading, setLoading ] = useState(false);
+//      const [ data, setData ] = useState({
+//          patient_id: "",
+//          doctor_id:"",
+//     problem:"",
+//     suggestion:"",
+//     futureVisit:"",
+//   });
+
+// const changeHandler = (e) => {
+//     setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
+// }
+
+//     const AddHealthRecord = async ()=>{
+//         setLoading(true);
+//         try {
+//             const res = await axios.post("patient/add-health-record", data);
+//             console.log(res);
+//             if(res.status === 200){
+//                 toast.success("Record Added");
+//                 setData({patient_id: "",
+//                 doctor_id:"",
+//            problem:"",
+//            suggestion:"",
+//            futureVisit:"" })
+//            PatientHealth();
+//             }
+//         }catch (error) {
+//             if(error.response.status === 400){
+//                 toast.error("All fields required")
+//             }else{
+//                 toast.error("Server error")
+//             }
+//             // console.log(error);
+//         }finally{
+//             setLoading(false);
+//         }
+//     }
+//     return { loading,changeHandler, AddHealthRecord, setData, data }
+// }
+
+export const UsePatient = () => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState({
+    patient_id: "",
+    doctor_id: "",
+    problem: "",
+    suggestion: "",
+    futureVisit: "",
+  });
+
+  const changeHandler = (e) => {
+    setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
+  };
+
+  const AddHealthRecord = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.post("patient/add-health-record", data);
+      console.log(res);
+      if (res.status === 200) {
+        toast.success("Record Added");
+        setData({
+          patient_id: "",
+          doctor_id: "",
+          problem: "",
+          suggestion: "",
+          futureVisit: "",
+        });
+         }
+    } catch (error) {
+      if (error.response.status === 400) {
+        toast.error("All fields required");
+      }
+    //  else {
+    //     toast.error("Server error");
+    //   }
+    console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { loading, changeHandler, AddHealthRecord, setData, data };
+};

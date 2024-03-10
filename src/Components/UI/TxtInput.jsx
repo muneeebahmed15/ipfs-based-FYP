@@ -5,7 +5,6 @@ const TxtInput = ({label, name, value, onChange, type}) => {
   return (
     <div>
         <TextField 
-        // id="filled-basic"
          label={label} 
          name={name} 
          value={value} 
@@ -17,4 +16,4 @@ const TxtInput = ({label, name, value, onChange, type}) => {
   )
 }
 
-export default TxtInput
+export default TxtInput;

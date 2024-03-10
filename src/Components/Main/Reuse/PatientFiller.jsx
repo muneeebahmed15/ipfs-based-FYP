@@ -19,7 +19,7 @@ const PatientFiller = ({list, admin, health, loading}) => {
 
         <div>
          {health && !(health && health.length > 0)? "No Record History" :
-         <PatientTable data={health} loading={loading} icon={"noicon"}/>
+         <PatientTable data={health} loading={loading} from={"doctor"}/>
          }
         </div>
 

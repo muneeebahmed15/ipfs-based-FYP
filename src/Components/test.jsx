@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import MainLayout from '../MainLayout'
+import React, { useState } from 'react';
 
-const Dashboard = () => {
-    const [firstString, setFirstString] = useState();
+const Test = () => {
+  const [firstString, setFirstString] = useState();
     const [secondString, setSecondString] = useState();
 
     const changeHandler = (e)=>{
@@ -19,16 +18,15 @@ const Dashboard = () => {
     }
   }
 
-
   return (
     <>
-      <h1>
+      
         <input type="text" name="firstString"  value={firstString} onChange={changeHandler}/>
         <input type="text" name="SecondString"  value={secondString} onChange={changeHandler}/>
         <button onClick={test}>Check</button>
-      </h1>
+      
     </>
   )
 }
 
-export default Dashboard
+export default Test

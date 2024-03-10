@@ -1,10 +1,9 @@
 import React from 'react'
-import MainLayout from '../MainLayout'
-import { LoadData } from '../../../actions/doctor'
+import { LoadData } from '../../../actions/doctor';
 import DoctorTable from '../../Tables/DoctorTable';
 
 const AllPatients = () => {
- const {loadPatients, loading, list} = LoadData();
+ const {loading, list} = LoadData("patient/get-all-patients");
   return (
     <>
         <DoctorTable data={list} loading={loading} />

@@ -5,6 +5,8 @@ import { RegisterData } from '../../../actions/admin'
 const CreatePatient = () => {
   const {loading, registerUser, data, changeHandler} = RegisterData("/patient/register-patient")
 
+  data.role = "patient";
+  
   return (
     <>
       <div className='flex flex-wrap m-3'>

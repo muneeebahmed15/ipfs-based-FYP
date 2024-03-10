@@ -41,7 +41,7 @@ const Navbar = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 550,
+        width: 500,
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
@@ -153,7 +153,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient Name"
           defaultValue={data.fullname}
-          className='mb-3 px-2' InputProps={{ readOnly: true }}
+          className='mb-3 px-1' InputProps={{ readOnly: true }}
         />
   <TextField
           required
@@ -161,7 +161,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient Email"
           defaultValue={data.email}
-          className='mb-3 px-2'  InputProps={{ readOnly: true }}
+          className='mb-3 px-1'  InputProps={{ readOnly: true }}
         />
         <TextField
           required
@@ -169,7 +169,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient DOB"
           defaultValue={data?.DOB?.slice(0,10)} //.slice(0,10)
-          className='mb-3 px-2' InputProps={{ readOnly: true }}
+          className='mb-3 px-1' InputProps={{ readOnly: true }}
         />
          <TextField
           required
@@ -177,7 +177,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient Gender"
           defaultValue={data.gender}
-          className='mb-3 px-2' InputProps={{ readOnly: true }}
+          className='mb-3 px-1' InputProps={{ readOnly: true }}
         />
         <TextField
           required
@@ -185,7 +185,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient phone"
           defaultValue={data.phone}
-          className='mb-3 px-2' InputProps={{ readOnly: true }}
+          className='mb-3 px-1' InputProps={{ readOnly: true }}
         />
          <TextField
           required
@@ -193,7 +193,7 @@ const Navbar = () => {
           variant='filled'
           label="Patient username"
           defaultValue={data.username}
-          className='mb-3 px-2' InputProps={{ readOnly: true }}
+          className='mb-3 px-1' InputProps={{ readOnly: true }}
         />
         
 <Button variant="contained" onClick={secondModal}>Change Password</Button>
