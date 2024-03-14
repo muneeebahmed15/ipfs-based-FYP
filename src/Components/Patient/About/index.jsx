@@ -1,7 +1,10 @@
+
+
 import React from 'react'
 import { about } from '../../../Assets'
 import { Link } from 'react-router-dom'
 import LandingLayout from '../../LandingLayout'
+import abc from '../../../Assets/abc.png'
 
 const About = () => {
   return (
@@ -17,7 +20,7 @@ const About = () => {
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img className="object-cover object-center rounded" alt="hero" src={about}/>
+      <img className="object-cover object-center rounded" alt="hero" src={abc} width={100}/>
     </div>
   </div>
 </section>

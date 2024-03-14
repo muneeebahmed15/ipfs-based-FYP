@@ -1,3 +1,5 @@
+
+
 import { useEffect, useState } from 'react'
 import { logo } from '../../../Assets'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -5,12 +7,16 @@ import { _AuthContext } from '../../../Context/AuthContext'
 import { SubmitData } from '../../../actions/common.actions'
 import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import { LoadData, Updation } from '../../../actions/patient'
+import { useLocation } from 'react-router-dom'
+
 
 const Navbar = () => {
-   const {id} = useParams()
+   const {id} = useParams();
   const [auth] = _AuthContext();
  const {data, loading} = LoadData(id);
  const router = useNavigate();
+
+ const location = useLocation();
 
    const {logoutUser} = SubmitData();
   const {updatePassword, loading : passwordLoading, changeHandler} = Updation();
@@ -107,7 +113,7 @@ const Navbar = () => {
                     <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                         {!authToken && navigation.map((item, idx) => {
                                 return (
-                                    <li key={idx} className="text-white hover:text-gray-600">
+                                    <li key={idx} className={`hover:text-gray-600 ${location.pathname === item.path ? "text-indigo-600 border-b-2 border-indigo-600" : "text-white"}`}>
                                         <Link to={item.path} className="block">
                                             {item.title}
                                         </Link>

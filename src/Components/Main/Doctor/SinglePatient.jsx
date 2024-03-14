@@ -1,5 +1,5 @@
+
 import React from 'react'
-import MainLayout from '../MainLayout'
 import { useParams } from 'react-router-dom'
 import { LoadSinglePatient } from '../../../actions/doctor';
 import PatientFiller from '../Reuse/PatientFiller';

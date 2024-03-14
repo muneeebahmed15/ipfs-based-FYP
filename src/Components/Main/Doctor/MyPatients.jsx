@@ -1,9 +1,21 @@
 import React from 'react'
-import MainLayout from '../MainLayout'
+import { LoadData } from '../../../actions/doctor';
+import { _AuthContext } from '../../../Context/AuthContext';
+import DoctorTable from '../../Tables/DoctorTable';
 
 const MyPatients = () => {
+  
+  const { loading, list} = LoadData("/patient/get-all-patients");
+
+
+
   return (
-    <>MyPatients</>
+    <>
+    
+    <DoctorTable data={list} loading={loading} />
+
+
+    </>
   )
 }
 

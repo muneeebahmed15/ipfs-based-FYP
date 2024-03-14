@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { UsePatient } from '../../actions/admin';
 import { Box, Button, FormControl, InputLabel, MenuItem, Modal, Select } from '@mui/material';
 import { LoadData } from '../../actions/doctor';
+import Loading from '../UI/Loading';
 
 
 const style = {
@@ -50,7 +51,7 @@ const HealthRecordModal = ({open, setOpen, closeModel}) => {
     {doctorList.map((x)=> <MenuItem value={x._id}>{doctorLoading ? "loading...": x.fullname}</MenuItem>)}
   </Select>
   </FormControl>
-        <Button onClick={AddHealthRecord} className='px-2 mt-2'>{healthLoading? "loading..." :"Add Record"}</Button>
+        <Button onClick={AddHealthRecord} style={{backgroundColor: "rgb(79 70 229)"}} className='px-2 mt-2 mx-2 mt-2 text-white'>{healthLoading?<> <Loading loading={healthLoading}/> Loading... </>:"Add Record"}</Button>
         </Box>
       </Modal>
   

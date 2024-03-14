@@ -2,11 +2,11 @@ import { AiFillDashboard, AiFillPoundCircle, AiOutlineOrderedList } from "react-
 
 
 export const AdminNavs = [
-    {
-        name:"Dashboard",
-        icon : <AiFillDashboard/>,
-        link : "/admin/dashboard",
-    },
+    // {
+    //     name:"Dashboard",
+    //     icon : <AiFillDashboard/>,
+    //     link : "/admin/dashboard",
+    // },
     {
         name:"Create Patient",
         icon : <AiFillDashboard/>,
@@ -31,16 +31,17 @@ export const AdminNavs = [
         name:"View All Doctors",
         icon : <AiFillPoundCircle/>,
         link : "/admin/view-all-doctors",
+    },
+    {
+        name:"Search",
+        icon : <AiFillDashboard/>,
+        link : "/admin/search",
     }
    
 ]
 
 export const DoctorNavs = [
-    {
-        name:"Dashboard",
-        icon : <AiFillDashboard/>,
-        link : "/doctor",
-    },
+   
     {
         name:"All Patients",
         icon : <AiFillDashboard/>,
@@ -55,5 +56,6 @@ export const DoctorNavs = [
         name:"My Patients",
         icon : <AiFillPoundCircle/>,
         link : "/doctor/my-patients",
-    }
+    },
+    
 ]

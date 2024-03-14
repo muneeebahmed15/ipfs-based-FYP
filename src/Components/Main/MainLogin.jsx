@@ -1,8 +1,11 @@
+
 import { useEffect, useState } from "react";
 import { logo } from "../../Assets";
 import { SubmitData } from "../../actions/common.actions";
 import { _AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Loading from "../UI/Loading";
+import { CircularProgress } from "@mui/material";
 
 const MainLogin = () => {
  const [auth] = _AuthContext();
@@ -19,9 +22,9 @@ const checkUser = (e)=>{
 
 useEffect(()=>{
     if(authToken && auth?.user?.role === "admin"){
-        navigate("/admin/dashboard")
+        navigate("/admin/create-patient")
     }else if(authToken && auth?.user?.role === "doctor") {
-      navigate("/doctor/dashboard");
+      navigate("/doctor/all-patients");
     }else{
       navigate("/main-login");
     }
@@ -79,7 +82,7 @@ useEffect(()=>{
               className="w-full px-4 py-2 mt-3 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
             onClick={loginUser}
             >
-            {loading? "Loading...": "Sign in"}
+            {loading? <CircularProgress/> : "Sign in"}
             </button>
             <div className="text-center mt-2">
               <a href="/" className="hover:text-indigo-600">

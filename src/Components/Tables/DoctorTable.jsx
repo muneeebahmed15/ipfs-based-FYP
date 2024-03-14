@@ -2,6 +2,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 import React from 'react';
 import { FaRegFolderClosed } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import Loading from '../UI/Loading';
 
 const DoctorTable = ({data, loading}) => {
   return (
@@ -19,7 +20,7 @@ const DoctorTable = ({data, loading}) => {
           <TableCell>Details</TableCell>
         </TableRow>
       </TableHead>
-      {loading ? "Loading...":
+      {loading ? <Loading loading={loading}/>:
       <TableBody>
         {data.map((x) => (
           <TableRow key={x._id} >

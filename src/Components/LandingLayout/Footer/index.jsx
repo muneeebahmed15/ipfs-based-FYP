@@ -1,10 +1,15 @@
+
+
 import React from 'react'
 import { logo } from '../../../Assets'
+import {useLocation} from "react-router-dom"
 
 const Footer = () => {
+const path = useLocation().pathname;
+
   return (
     <>
-    <footer className="w-full text-gray-400 bg-gray-900 ">
+    <footer className={`w-full text-gray-400 bg-gray-900 ${path.includes("/patient/home/") ? "fixed bottom-0" :"" }`}>
   <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <span className="flex title-font font-medium items-center md:justify-start justify-center text-white">
       <img src={logo} alt="" className="w-30 h-20 text-white p-2 "/>

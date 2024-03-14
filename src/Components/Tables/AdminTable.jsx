@@ -4,6 +4,7 @@ import { FaRegFolderClosed } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import HealthRecordModal from '../Modals/HealthRecordModal';
+import Loading from '../UI/Loading';
 
 const heading={fontSize: '16px', fontWeight:"bold"}
 
@@ -36,7 +37,7 @@ const AdminTable = ({data, loading, from}) => {
          {from === "admin" &&  <TableCell style={heading}>Details</TableCell> }    
         </TableRow>
       </TableHead>
-      {loading ? "Loading..." : (
+      {loading ? <Loading loading={loading}/> : (
   <TableBody>
     {data.map((x) => (
       <TableRow key={x._id}>

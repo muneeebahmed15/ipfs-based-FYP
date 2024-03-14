@@ -1,11 +1,16 @@
+
+
 import React, { useState } from 'react'
-import AdminTable from '../../Tables/AdminTable'
 import { LoadData } from '../../../actions/doctor'
 import { FormControl, InputLabel, MenuItem, Select, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { Box, Button, Modal } from '@mui/material';
 import { UsePatient } from '../../../actions/admin';
 import TxtInput from '../../UI/TxtInput';
+import Heading from '../../UI/Heading';
+import Loading from '../../UI/Loading';
+
+
 
 const style = {
     position: 'absolute',
@@ -40,7 +45,10 @@ const AddPatientHealth = () => {
 
   return (
     <>
-    <small><i className='text-red-600'>If table is empty means no patient is registered today</i></small>
+
+    <Heading icon={<IoIosAddCircleOutline style={{fontSize: "25px"}}/>} title={"Add Patient Health"}/>
+
+    <small><i className='text-red-600 mx-5'>If table is empty means no patient is registered today</i></small>
 
 <TableContainer>
 <Table sx={{ minWidth: 450 }} aria-label="simple table">
@@ -104,7 +112,7 @@ return (
     {doctorList.map((x)=> <MenuItem value={x._id}>{doctorLoading ? "loading...": x.fullname}</MenuItem>)}
   </Select>
   </FormControl>
-        <Button onClick={AddHealthRecord} className='px-2 mt-2'>{healthLoading? "loading..." :"Add Record"}</Button>
+        <Button onClick={AddHealthRecord} style={{backgroundColor: "rgb(79 70 229)"}} className='px-3 py-2 mx-2 mt-3 text-white'>{healthLoading? <><Loading loading={loading}/>Loading... </>:"Add Record"}</Button>
         </Box>
       </Modal>
 

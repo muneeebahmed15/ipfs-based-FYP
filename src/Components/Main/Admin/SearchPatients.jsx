@@ -40,7 +40,7 @@ const SearchPatients = () => {
       <Button className='text-white mb-2' onClick={search} style={{backgroundColor: "rgb(79 70 229)", marginRight:"60px"}}>{loading? "loading...": "Search By CNIC"}</Button>
       </div>
 
-      <PatientFiller list={list} admin={admin} health={health} from ={"doctor"} loading={loading}/>
+      <PatientFiller list={list} admin={admin} health={health} loading={loading}/>
       </div>
       
     </>

@@ -1,3 +1,5 @@
+//Common actions for all
+
 import axios from "axios";
 import { useState } from "react"
 import { _AuthContext } from "../Context/AuthContext";

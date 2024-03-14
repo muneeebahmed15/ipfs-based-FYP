@@ -1,7 +1,11 @@
+
+
 import React from 'react'
 import LandingLayout from '../../LandingLayout'
 
 const Contact = () => {
+
+
   return (
     <LandingLayout>
     <section className="text-gray-600 body-font relative">

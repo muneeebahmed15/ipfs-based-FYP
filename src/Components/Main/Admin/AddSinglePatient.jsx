@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { PatientHealth, UsePatient } from '../../../actions/admin';
@@ -5,6 +7,8 @@ import PatientTable from '../../Tables/PatientTable';
 import { Button } from '@mui/material';
 import HealthRecordModal from '../../Modals/HealthRecordModal';
 import { LoadData } from '../../../actions/doctor';
+import Heading from '../../UI/Heading';
+import { RiPagesLine } from "react-icons/ri";
 
 
 
@@ -27,10 +31,13 @@ const AddSinglePatient = () => {
 
   return (
     <>
+
+    <Heading icon={<RiPagesLine  style={{fontSize:"25px"}}/>} title={"Patient Record"}/>
+
     <div className='flex justify-end px-8'>
-        <Button className='mx-3' onClick={loadHealth}>Reload</Button>
+        <Button className='my-3 mx-3 px-3 py-2 text-white hover-effect' style={{backgroundColor: "rgb(129, 120, 255)"}} onClick={loadHealth}>Reload</Button>
       
-        <Button onClick={openModal}>Add Record</Button>
+        <Button className='my-3 mr-4 px-3 py-2 text-white' onClick={openModal} style={{backgroundColor: "rgb(79 70 229)"}}>Add Record</Button>
     </div>
 
     <HealthRecordModal open={open} setOpen={setOpen} closeModel={closeModel}/>

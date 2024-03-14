@@ -1,12 +1,13 @@
 import React from 'react'
 import TxtDisplay from '../../UI/TxtDisplay'
 import PatientTable from '../../Tables/PatientTable'
+import Loading from '../../UI/Loading'
 
-const PatientFiller = ({list, admin, health, loading}) => {
+const PatientFiller = ({list, admin, health, loading, from}) => {
 
   return (
     <>
-    {loading? "loading...":
+    {loading ? <Loading loading={loading}/>: list ?
      <div>
         <div>
             <TxtDisplay value={list?.fullname}  label={"FullName"}/>
@@ -18,12 +19,12 @@ const PatientFiller = ({list, admin, health, loading}) => {
         </div>
 
         <div>
-         {health && !(health && health.length > 0)? "No Record History" :
-         <PatientTable data={health} loading={loading} from={"doctor"}/>
+         {health &&
+         <PatientTable data={health} loading={loading} from={from} />
          }
         </div>
 
-        </div>}
+        </div> : ""}
     </>
   )
 }
